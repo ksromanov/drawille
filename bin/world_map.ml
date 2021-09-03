@@ -3,7 +3,7 @@
  *
  * (world_110m.txt coordinates were converted to int and deduplicated)
  *)
-let world_110m_int = 
+let world_110m_int =
    [(140, 43);
     (-150, 61);
     (-98, 71);
@@ -3607,9 +3607,9 @@ let world_110m_int =
     (-134, 69);]
 
 let () =
-    let (maxX, maxY) = List.fold_left
-                            (fun (maxX, maxY) (x, y) -> (max maxX x, max maxY y))
+    let (minX, maxY) = List.fold_left
+                            (fun (minX, maxY) (x, y) -> (min minX x, max maxY y))
                                 (0, 0) world_110m_int in
-    let world = List.map (fun (x, y) -> (maxX - x)/3, (maxY - y)/3) world_110m_int in
+    let world = List.map (fun (x, y) -> (x - minX)/3, (maxY - y)/3) world_110m_int in
 
     Printf.printf "%s" @@ Drawille.frame @@ Drawille.fromList world
