@@ -1,0 +1,4 @@
+(executable
+ (name world_map)
+ (libraries drawille))
+
