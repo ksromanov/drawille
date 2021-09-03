@@ -1,0 +1,11 @@
+opam-version: "2.0"
+version: "1.0"
+maintainer: "Konstantin Romanov <konstantinsromanov@gmail.com>"
+authors: ["Konstantin Romanov <konstantinsromanov@gmail.com>"]
+homepage: "https://github.com/ksromanov/drawille"
+bug-reports: "https://github.com/ksromanov/drawille/issues"
+dev-repo: "git+https://github.com/ksromanov/drawille.git"
+license: "MIT"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
